@@ -18,11 +18,6 @@ public class BoardController {
 
     @GetMapping("/board/save-form")
     public String saveForm() {
-        User sessionUser = (User) session.getAttribute("sessionUser");
-        if (sessionUser == null) {
-            throw new RuntimeException("인증되지 않음 401");
-        }
-        session.setAttribute("sessionUser", new User());
         return "board/save-form";
     }
 }
